@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 export default function CTA() {
   return (
-    <section id="contact" className="relative py-24">
+    <section id="contact" className="relative py-28">
       <div className="absolute inset-0 bg-[radial-gradient(40%_40%_at_80%_20%,rgba(59,130,246,0.18),transparent_60%)]" />
       <div className="relative mx-auto max-w-5xl px-6 text-center">
         <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>

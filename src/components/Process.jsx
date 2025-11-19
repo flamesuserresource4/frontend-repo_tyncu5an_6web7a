@@ -9,7 +9,18 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="relative py-24">
+    <section id="process" className="relative py-28">
+      <div className="pointer-events-none absolute inset-0">
+        <svg className="absolute inset-x-0 -top-10 w-full" height="120" viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 60C240 0 480 120 720 60C960 0 1200 120 1440 60" stroke="url(#g)" strokeOpacity="0.25" strokeWidth="2" />
+          <defs>
+            <linearGradient id="g" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#A855F7" />
+              <stop offset="1" stopColor="#3B82F6" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="max-w-2xl">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[12px] text-slate-200">So arbeiten wir</span>
@@ -29,6 +40,7 @@ export default function Process() {
               <div className="text-fuchsia-400/90 font-mono text-sm">{s.no}</div>
               <div className="mt-2 text-white font-semibold">{s.title}</div>
               <div className="mt-2 text-slate-300 text-sm">{s.text}</div>
+              <div className="pointer-events-none absolute -inset-24 -z-10 bg-[radial-gradient(40%_40%_at_70%_0%,rgba(168,85,247,0.25),transparent_60%)]" />
             </motion.div>
           ))}
         </div>

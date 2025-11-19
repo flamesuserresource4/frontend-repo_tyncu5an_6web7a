@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { Palette, Megaphone, FileText, Sparkles } from 'lucide-react'
 
 const services = [
@@ -26,9 +26,17 @@ const services = [
 ]
 
 export default function Services() {
+  const { scrollYProgress } = useScroll()
+  const rotate = useTransform(scrollYProgress, [0, 1], [0, 12])
+
   return (
-    <section id="services" className="relative py-24">
-      <div className="absolute inset-0 bg-[radial-gradient(40%_40%_at_20%_20%,rgba(168,85,247,0.18),transparent_60%)]" />
+    <section id="services" className="relative py-28">
+      {/* orbit outline */}
+      <motion.div style={{ rotate }} className="pointer-events-none absolute inset-0">
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[44rem] w-[44rem] rounded-full border border-fuchsia-500/10" />
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[60rem] w-[60rem] rounded-full border border-blue-500/10" />
+      </motion.div>
+
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="max-w-2xl">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[12px] text-slate-200">
